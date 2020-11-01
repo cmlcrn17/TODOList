@@ -4,6 +4,12 @@ Bu proje içeriğinde Firebase entegrasyonlu TODO List Swift uygulaması yer alm
 
 Wireframe: 
 
-https://github.com/cmlcrn17/TODOList/blob/main/Documentation/getList.jpg
+![Splash Screen](https://github.com/cmlcrn17/TODOList/blob/main/Documentation/getStarted.jpg)
 
-https://github.com/cmlcrn17/TODOList/blob/main/Documentation/getStarted.jpg
+![Liste](https://github.com/cmlcrn17/TODOList/blob/main/Documentation/getList.jpg)
+
+
+
+
+
+
