@@ -12,16 +12,18 @@
 		853DCB8A254F299C0072DEDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 853DCB89254F299C0072DEDF /* Assets.xcassets */; };
 		853DCB8D254F299C0072DEDF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 853DCB8C254F299C0072DEDF /* Preview Assets.xcassets */; };
 		853DCB97254F29E50072DEDF /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853DCB96254F29E50072DEDF /* Task.swift */; };
+		85F864E82560493B00A297A7 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F864E72560493B00A297A7 /* SplashView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		853DCB82254F299C0072DEDF /* TODO List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TODO List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		853DCB85254F299C0072DEDF /* TODO_ListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODO_ListApp.swift; sourceTree = "<group>"; };
-		853DCB87254F299C0072DEDF /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
+		853DCB87254F299C0072DEDF /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; usesTabs = 0; wrapsLines = 1; };
 		853DCB89254F299C0072DEDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		853DCB8C254F299C0072DEDF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		853DCB8E254F299C0072DEDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		853DCB96254F29E50072DEDF /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		85F864E72560493B00A297A7 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +57,6 @@
 			isa = PBXGroup;
 			children = (
 				853DCB95254F29CF0072DEDF /* Model */,
-				853DCB85254F299C0072DEDF /* TODO_ListApp.swift */,
 				853DCB9A254F2B0B0072DEDF /* Views */,
 				853DCB89254F299C0072DEDF /* Assets.xcassets */,
 				853DCB8E254F299C0072DEDF /* Info.plist */,
@@ -75,6 +76,7 @@
 		853DCB95254F29CF0072DEDF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				853DCB85254F299C0072DEDF /* TODO_ListApp.swift */,
 				853DCB96254F29E50072DEDF /* Task.swift */,
 			);
 			path = Model;
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				853DCB87254F299C0072DEDF /* TaskListView.swift */,
+				85F864E72560493B00A297A7 /* SplashView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				853DCB88254F299C0072DEDF /* TaskListView.swift in Sources */,
+				85F864E82560493B00A297A7 /* SplashView.swift in Sources */,
 				853DCB97254F29E50072DEDF /* Task.swift in Sources */,
 				853DCB86254F299C0072DEDF /* TODO_ListApp.swift in Sources */,
 			);
@@ -289,6 +293,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"TODO List/Preview Content\"";
+				DEVELOPMENT_TEAM = T66S44XPZ4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "TODO List/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -299,7 +304,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "cmlcrn17.TODO-List";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -310,6 +315,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"TODO List/Preview Content\"";
+				DEVELOPMENT_TEAM = T66S44XPZ4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "TODO List/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -320,7 +326,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "cmlcrn17.TODO-List";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -20,7 +20,7 @@ struct TaskListView: View {
                 }
                 
                 Button(action: {}) {
-                    HStack{
+                    HStack(alignment: .center){
                         Image(systemName: "plus.circle.fill")
                             .resizable()
                             .frame(width: 20, height: 20)
@@ -28,15 +28,6 @@ struct TaskListView: View {
                     }
                 }.padding()
             }.navigationTitle("Tasks")
-        }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            TaskListView()
-                .previewDevice("iPhone 11")
         }
     }
 }
@@ -50,8 +41,24 @@ struct ListItem: View {
                 .resizable()
                 .frame(width: 20, height: 20)
             Text(task.title)
-                .padding()
         }
-       
     }
 }
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            TaskListView()
+                .preferredColorScheme(.light)
+                .environment(\.sizeCategory, .medium)
+                .previewDisplayName("Big")
+                .previewLayout(.device)
+                .previewDevice("iPhone 11")
+            
+            TaskListView()
+                .previewDevice("iPhone 8")
+        }
+    }
+}
+
+
