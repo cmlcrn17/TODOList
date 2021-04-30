@@ -17,7 +17,7 @@ struct SplashView: View {
                 
                 if self.isActive {
                     
-                    TaskListView()
+                    ContentView()
                     
                 } else {
                     
@@ -47,7 +47,5 @@ struct SplashView_Previews: PreviewProvider {
         Group{
             SplashView()
         }
-        
-        
     }
 }

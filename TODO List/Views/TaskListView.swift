@@ -45,20 +45,6 @@ struct ListItem: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            TaskListView()
-                .preferredColorScheme(.light)
-                .environment(\.sizeCategory, .medium)
-                .previewDisplayName("Big")
-                .previewLayout(.device)
-                .previewDevice("iPhone 11")
-            
-            TaskListView()
-                .previewDevice("iPhone 8")
-        }
-    }
-}
+
 
 
