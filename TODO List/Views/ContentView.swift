@@ -49,59 +49,6 @@ struct Home : View {
                     Login(index: self.$index)
 
                 }
-                
-                HStack(spacing: 15){
-                    
-                    Rectangle()
-                    .fill(Color("Color1"))
-                    .frame(height: 1)
-                    
-                    Text("OR")
-                    
-                    Rectangle()
-                    .fill(Color("Color1"))
-                    .frame(height: 1)
-                }
-                .padding(.horizontal, 30)
-                .padding(.top, 50)
-                // because login button is moved 25 in y axis and 25 padding = 50
-                
-                HStack(spacing: 25){
-                    
-                    Button(action: {
-                        
-                    }) {
-                        
-                        Image("apple")
-                        .resizable()
-                        .renderingMode(.original)
-                        .frame(width: 50, height: 50)
-                        .clipShape(Circle())
-                    }
-                    
-                    Button(action: {
-                        
-                    }) {
-                        
-                        Image("fb")
-                        .resizable()
-                        .renderingMode(.original)
-                        .frame(width: 50, height: 50)
-                        .clipShape(Circle())
-                    }
-                    
-                    Button(action: {
-                        
-                    }) {
-                        
-                        Image("twitter")
-                        .resizable()
-                        .renderingMode(.original)
-                        .frame(width: 50, height: 50)
-                        .clipShape(Circle())
-                    }
-                }
-                .padding(.top, 30)
             }
             .padding(.vertical)
         }
@@ -268,14 +215,27 @@ struct Login : View {
     }
 }
 
-// SignUP Page..
-
 struct SignUP : View {
     
     @State var email = ""
     @State var pass = ""
     @State var Repass = ""
     @Binding var index : Int
+    
+    
+    func signUp(){
+        Auth.auth().createUser(withEmail: email, password: pass)
+        { authResult, error in
+            if error != nil
+            {
+                print(error)
+            }else{
+                print(authResult)
+            }
+        }
+    }
+    
+    
     
     var body: some View{
         
@@ -369,7 +329,7 @@ struct SignUP : View {
             // Button...
             
             Button(action: {
-                
+                signUp()
             }) {
                 
                 Text("SIGNUP")
