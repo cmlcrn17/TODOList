@@ -6,41 +6,23 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct TaskListView: View {
     
-    let tasks = debugData
+    @ObservedObject private var viewModel = userViewModel()
     
     var body: some View {
-        NavigationView{
-            VStack(alignment: .leading) {
-                
-                List(tasks) { task in
-                    ListItem(task: task)
+        NavigationView {
+            List(viewModel.users) { user in
+                VStack(alignment: .leading) {
+                    Text(user.name).font(.title)
+                    Text(user.gsm).font(.title)
                 }
-                
-                Button(action: {}) {
-                    HStack(alignment: .center){
-                        Image(systemName: "plus.circle.fill")
-                            .resizable()
-                            .frame(width: 20, height: 20)
-                        Text("Add New Task")
-                    }
-                }.padding()
-            }.navigationTitle("Tasks")
-        }
-    }
-}
-
-struct ListItem: View {
-    let task : Task
-    
-    var body: some View {
-        HStack{
-            Image(systemName: task.completed ? "checkmark.circle.fill" : "circle")
-                .resizable()
-                .frame(width: 20, height: 20)
-            Text(task.title)
+            }.navigationBarTitle("Users")
+            .onAppear() {
+                self.viewModel.fetchData()
+            }
         }
     }
 }

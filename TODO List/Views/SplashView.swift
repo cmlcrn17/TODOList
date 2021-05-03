@@ -17,7 +17,7 @@ struct SplashView: View {
                 
                 if self.isActive {
                     
-                    ContentView()
+                    LoginAndRegisterView()
                     
                 } else {
                     

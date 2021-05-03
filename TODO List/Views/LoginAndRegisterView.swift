@@ -8,19 +8,20 @@
 import SwiftUI
 import Firebase
 
-struct ContentView: View {
+struct LoginAndRegisterView: View {
     var body: some View {
-        
-        Home()
-            // for light status bar...
-            .preferredColorScheme(.dark)
+        NavigationView{
+            Home()
+                // for light status bar...
+                .preferredColorScheme(.dark)
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group{
-            ContentView()
+            LoginAndRegisterView()
                 .previewDevice("iPhone 12 Pro Max")
         }
     }
@@ -37,8 +38,8 @@ struct Home : View {
             VStack{
                 
                 Image("logo")
-                .resizable()
-                .frame(width: 60, height: 60)
+                    .resizable()
+                    .frame(width: 60, height: 60)
                 
                 ZStack{
                     
@@ -46,8 +47,8 @@ struct Home : View {
                         // changing view order...
                         .zIndex(Double(self.index))
                     
-                    Login(index: self.$index)
-
+                    Login(index: self.$index, showingTaskListView: false)
+                    
                 }
             }
             .padding(.vertical)
@@ -61,7 +62,7 @@ struct CShape : Shape {
     func path(in rect: CGRect) -> Path {
         
         return Path{path in
-
+            
             // right side curve...
             
             path.move(to: CGPoint(x: rect.width, y: 100))
@@ -78,7 +79,7 @@ struct CShape1 : Shape {
     func path(in rect: CGRect) -> Path {
         
         return Path{path in
-
+            
             // left side curve...
             
             path.move(to: CGPoint(x: 0, y: 100))
@@ -95,6 +96,7 @@ struct Login : View {
     @State var email = ""
     @State var pass = ""
     @Binding var index : Int
+    @State var showingTaskListView : Bool
     
     func login(){
         Auth.auth().signIn(withEmail: email, password: pass){
@@ -103,7 +105,7 @@ struct Login : View {
             {
                 print(error)
             }else{
-                print(result)
+                self.showingTaskListView.toggle()
             }
         }
     }
@@ -124,7 +126,7 @@ struct Login : View {
                             .fontWeight(.bold)
                         
                         Capsule()
-                            .fill(self.index == 0 ? Color.blue : Color.clear)
+                            .fill(self.index == 0 ? Color.orange : Color.clear)
                             .frame(width: 100, height: 5)
                     }
                     
@@ -137,7 +139,7 @@ struct Login : View {
                     HStack(spacing: 15){
                         
                         Image(systemName: "envelope.fill")
-                        .foregroundColor(Color("Color1"))
+                            .foregroundColor(Color("Color1"))
                         
                         TextField("Email Address", text: self.$email)
                     }
@@ -152,7 +154,7 @@ struct Login : View {
                     HStack(spacing: 15){
                         
                         Image(systemName: "eye.slash.fill")
-                        .foregroundColor(Color("Color1"))
+                            .foregroundColor(Color("Color1"))
                         
                         SecureField("Password", text: self.$pass)
                     }
@@ -162,20 +164,6 @@ struct Login : View {
                 .padding(.horizontal)
                 .padding(.top, 30)
                 
-                HStack{
-                    
-                    Spacer(minLength: 0)
-                    
-                    Button(action: {
-                        
-                    }) {
-                        
-                        Text("Forget Password?")
-                            .foregroundColor(Color.white.opacity(0.6))
-                    }
-                }
-                .padding(.horizontal)
-                .padding(.top, 30)
             }
             .padding()
             // bottom padding...
@@ -185,9 +173,9 @@ struct Login : View {
             .contentShape(CShape())
             .shadow(color: Color.black.opacity(0.3), radius: 5, x: 0, y: -5)
             .onTapGesture {
-            
+                
                 self.index = 0
-                    
+                
             }
             .cornerRadius(35)
             .padding(.horizontal,20)
@@ -211,17 +199,27 @@ struct Login : View {
             // moving view down..
             .offset(y: 25)
             .opacity(self.index == 0 ? 1 : 0)
+            .padding(.top, 30)
+            
+            NavigationLink(destination: TaskListView(), isActive: self.$showingTaskListView){
+                Text("")
+            }
+            
         }
+        
     }
 }
 
 struct SignUP : View {
     
+    @State var name = ""
     @State var email = ""
     @State var pass = ""
+    @State var gsm = ""
     @State var Repass = ""
     @Binding var index : Int
     
+    @ObservedObject private var viewModel = userViewModel()
     
     func signUp(){
         Auth.auth().createUser(withEmail: email, password: pass)
@@ -230,6 +228,8 @@ struct SignUP : View {
             {
                 print(error)
             }else{
+                
+                self.viewModel.insertData(name: name, gsm: gsm)
                 print(authResult)
             }
         }
@@ -255,7 +255,7 @@ struct SignUP : View {
                             .fontWeight(.bold)
                         
                         Capsule()
-                            .fill(self.index == 1 ? Color.blue : Color.clear)
+                            .fill(self.index == 1 ? Color.orange : Color.clear)
                             .frame(width: 100, height: 5)
                     }
                 }
@@ -266,7 +266,22 @@ struct SignUP : View {
                     HStack(spacing: 15){
                         
                         Image(systemName: "envelope.fill")
-                        .foregroundColor(Color("Color1"))
+                            .foregroundColor(Color("Color1"))
+                        
+                        TextField("Name", text: self.$name)
+                    }
+                    
+                    Divider().background(Color.white.opacity(0.5))
+                }
+                .padding(.horizontal)
+                .padding(.top, 40)
+                
+                VStack{
+                    
+                    HStack(spacing: 15){
+                        
+                        Image(systemName: "envelope.fill")
+                            .foregroundColor(Color("Color1"))
                         
                         TextField("Email Address", text: self.$email)
                     }
@@ -281,7 +296,7 @@ struct SignUP : View {
                     HStack(spacing: 15){
                         
                         Image(systemName: "eye.slash.fill")
-                        .foregroundColor(Color("Color1"))
+                            .foregroundColor(Color("Color1"))
                         
                         SecureField("Password", text: self.$pass)
                     }
@@ -291,17 +306,14 @@ struct SignUP : View {
                 .padding(.horizontal)
                 .padding(.top, 30)
                 
-                // replacing forget password with reenter password...
-                // so same height will be maintained...
-                
                 VStack{
                     
                     HStack(spacing: 15){
                         
                         Image(systemName: "eye.slash.fill")
-                        .foregroundColor(Color("Color1"))
+                            .foregroundColor(Color("Color1"))
                         
-                        SecureField("Password", text: self.$Repass)
+                        TextField("GSM", text: self.$gsm)
                     }
                     
                     Divider().background(Color.white.opacity(0.5))
@@ -319,9 +331,9 @@ struct SignUP : View {
             // shadow...
             .shadow(color: Color.black.opacity(0.3), radius: 5, x: 0, y: -5)
             .onTapGesture {
-            
+                
                 self.index = 1
-                    
+                
             }
             .cornerRadius(35)
             .padding(.horizontal,20)
@@ -347,6 +359,7 @@ struct SignUP : View {
             // hiding view when its in background...
             // only button...
             .opacity(self.index == 1 ? 1 : 0)
+            
         }
     }
 }

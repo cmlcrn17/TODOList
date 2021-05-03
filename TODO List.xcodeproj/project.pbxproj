@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		850ADBDE263DD32F00BB8DBD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850ADBDD263DD32F00BB8DBD /* User.swift */; };
+		850ADBE7263DD37300BB8DBD /* userViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850ADBE6263DD37300BB8DBD /* userViewModel.swift */; };
 		853DCB86254F299C0072DEDF /* TODO_ListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853DCB85254F299C0072DEDF /* TODO_ListApp.swift */; };
 		853DCB88254F299C0072DEDF /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853DCB87254F299C0072DEDF /* TaskListView.swift */; };
 		853DCB8A254F299C0072DEDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 853DCB89254F299C0072DEDF /* Assets.xcassets */; };
 		853DCB8D254F299C0072DEDF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 853DCB8C254F299C0072DEDF /* Preview Assets.xcassets */; };
 		853DCB97254F29E50072DEDF /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853DCB96254F29E50072DEDF /* Task.swift */; };
 		85A28630263C7CA600E1DFCA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85A2862F263C7CA600E1DFCA /* GoogleService-Info.plist */; };
-		85EF5635263C83EE00279489 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EF5634263C83EE00279489 /* ContentView.swift */; };
+		85EF5635263C83EE00279489 /* LoginAndRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EF5634263C83EE00279489 /* LoginAndRegisterView.swift */; };
 		85F864E82560493B00A297A7 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F864E72560493B00A297A7 /* SplashView.swift */; };
 		B0BC7CCA6932940BFE4FB719 /* Pods_TODO_List.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ECC36778EF45D1D0C3430EB /* Pods_TODO_List.framework */; };
 /* End PBXBuildFile section */
@@ -21,6 +23,8 @@
 /* Begin PBXFileReference section */
 		2ECC36778EF45D1D0C3430EB /* Pods_TODO_List.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TODO_List.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		82ECEE52ED5A9D6356898B9B /* Pods-TODO List.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TODO List.debug.xcconfig"; path = "Target Support Files/Pods-TODO List/Pods-TODO List.debug.xcconfig"; sourceTree = "<group>"; };
+		850ADBDD263DD32F00BB8DBD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		850ADBE6263DD37300BB8DBD /* userViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userViewModel.swift; sourceTree = "<group>"; };
 		853DCB82254F299C0072DEDF /* TODO List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TODO List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		853DCB85254F299C0072DEDF /* TODO_ListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODO_ListApp.swift; sourceTree = "<group>"; };
 		853DCB87254F299C0072DEDF /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; usesTabs = 0; wrapsLines = 1; };
@@ -29,7 +33,7 @@
 		853DCB8E254F299C0072DEDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		853DCB96254F29E50072DEDF /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		85A2862F263C7CA600E1DFCA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		85EF5634263C83EE00279489 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		85EF5634263C83EE00279489 /* LoginAndRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndRegisterView.swift; sourceTree = "<group>"; };
 		85F864E72560493B00A297A7 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		A853244E96B83D10BD18DCDC /* Pods-TODO List.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TODO List.release.xcconfig"; path = "Target Support Files/Pods-TODO List/Pods-TODO List.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -54,6 +58,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		850ADBE0263DD34E00BB8DBD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				850ADBE6263DD37300BB8DBD /* userViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		853DCB79254F299B0072DEDF = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +87,8 @@
 		853DCB84254F299C0072DEDF /* TODO List */ = {
 			isa = PBXGroup;
 			children = (
+				85B535A626408C9C001CDF0A /* Repo */,
+				850ADBE0263DD34E00BB8DBD /* ViewModel */,
 				85A2862F263C7CA600E1DFCA /* GoogleService-Info.plist */,
 				853DCB95254F29CF0072DEDF /* Model */,
 				853DCB9A254F2B0B0072DEDF /* Views */,
@@ -98,6 +112,7 @@
 			children = (
 				853DCB85254F299C0072DEDF /* TODO_ListApp.swift */,
 				853DCB96254F29E50072DEDF /* Task.swift */,
+				850ADBDD263DD32F00BB8DBD /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -107,9 +122,16 @@
 			children = (
 				853DCB87254F299C0072DEDF /* TaskListView.swift */,
 				85F864E72560493B00A297A7 /* SplashView.swift */,
-				85EF5634263C83EE00279489 /* ContentView.swift */,
+				85EF5634263C83EE00279489 /* LoginAndRegisterView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		85B535A626408C9C001CDF0A /* Repo */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repo;
 			sourceTree = "<group>";
 		};
 		F561B2B75A7693A115ECB2A1 /* Pods */ = {
@@ -237,8 +259,10 @@
 			files = (
 				853DCB88254F299C0072DEDF /* TaskListView.swift in Sources */,
 				85F864E82560493B00A297A7 /* SplashView.swift in Sources */,
+				850ADBDE263DD32F00BB8DBD /* User.swift in Sources */,
 				853DCB97254F29E50072DEDF /* Task.swift in Sources */,
-				85EF5635263C83EE00279489 /* ContentView.swift in Sources */,
+				85EF5635263C83EE00279489 /* LoginAndRegisterView.swift in Sources */,
+				850ADBE7263DD37300BB8DBD /* userViewModel.swift in Sources */,
 				853DCB86254F299C0072DEDF /* TODO_ListApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
